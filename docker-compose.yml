@@ -1,0 +1,25 @@
+version: "3.9"
+
+services:
+  mongodb:
+    image: mongo:7.0
+    container_name: indian_stt_mongodb
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+      - mongodb_config:/data/configdb
+    environment:
+      # Remove MONGO_INITDB_ROOT_USERNAME/PASSWORD for unauthenticated local dev
+      # Add them here + update MONGODB_URI in .env for authenticated setup
+      MONGO_INITDB_DATABASE: local_indian_stt
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  mongodb_data:
+  mongodb_config:

@@ -1,0 +1,24 @@
+{
+  "summary": {
+    "total_datasets": 8,
+    "total_files": 6,
+    "total_usable_files": 6,
+    "total_corrupted_files": 0,
+    "total_missing_transcripts": 0,
+    "total_duplicate_files": 0,
+    "total_audio_hours": 0.006194444444444444,
+    "hindi_hours": 0.0,
+    "hinglish_hours": 0.0,
+    "indian_english_hours": 0.0,
+    "telephone_8k_hours": 0.0008333333333333334,
+    "sr_16k_hours": 0.004805555555555556,
+    "other_sr_hours": 0.0005555555555555556,
+    "labeled_hours": 0.006194444444444444,
+    "unlabeled_hours": 0.0,
+    "train_samples": 0,
+    "validation_samples": 0,
+    "test_samples": 0,
+    "dataset_breakdown": {}
+  },
+  "total_records": 6
+}

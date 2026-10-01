@@ -1,0 +1,266 @@
+# Dataset Registry Configuration
+# All datasets are VERIFIED before being listed here.
+# Do NOT add a dataset without checking its license and availability.
+# Roles: TRAINING | VALIDATION | TEST | BENCHMARK
+# Status: VERIFIED | PENDING_VERIFICATION | UNVERIFIED | NOT_RECOMMENDED
+
+datasets:
+
+  - dataset_id: "shrutilipi"
+    name: "Shrutilipi"
+    provider: "AI4Bharat"
+    official_url: "https://ai4bharat.iitm.ac.in"
+    huggingface_url: "https://huggingface.co/datasets/ai4bharat/shrutilipi"
+    openslr_id: null
+    version: "1.0"
+    license: "CC-BY-4.0"
+    commercial_use: true
+    derivative_model_allowed: true
+    redistribution_allowed: true
+    share_alike: false
+    attribution_required: true
+    legal_review_required: false
+    total_hours: 6457  # ~6457 hrs across 12 languages
+    labeled_hours: 6457
+    unlabeled_hours: 0
+    speakers: null
+    languages: ["hi", "bn", "gu", "kn", "ml", "mr", "or", "pa", "ta", "te", "as", "ur"]
+    domain: "broadcast/read speech"
+    telephone_available: false
+    noisy_audio: false
+    spontaneous_speech: false
+    code_switching: false
+    sampling_rates: [16000]
+    transcript_available: true
+    role: "TRAINING"
+    status: "VERIFIED"
+    notes: "Large scale read + broadcast speech corpus. Primary training data for IndicConformer."
+
+  - dataset_id: "indicvoices"
+    name: "IndicVoices"
+    provider: "AI4Bharat"
+    official_url: "https://ai4bharat.iitm.ac.in"
+    huggingface_url: "https://huggingface.co/datasets/ai4bharat/indicvoices"
+    openslr_id: null
+    version: "1.0"
+    license: "CC-BY-4.0"
+    commercial_use: true
+    derivative_model_allowed: true
+    redistribution_allowed: true
+    share_alike: false
+    attribution_required: true
+    legal_review_required: false
+    total_hours: 7000
+    labeled_hours: 7000
+    unlabeled_hours: 0
+    speakers: null
+    languages: ["hi", "bn", "gu", "kn", "ml", "mr", "or", "pa", "ta", "te", "as", "ur", "ne", "sa"]
+    domain: "conversational/read speech"
+    telephone_available: true
+    noisy_audio: true
+    spontaneous_speech: true
+    code_switching: true
+    sampling_rates: [16000]
+    transcript_available: true
+    role: "TRAINING"
+    status: "VERIFIED"
+    notes: "Contains Hinglish, code-switched, spontaneous speech. Diverse speaker coverage."
+
+  - dataset_id: "vistaar"
+    name: "Vistaar"
+    provider: "AI4Bharat"
+    official_url: "https://github.com/AI4Bharat/vistaar"
+    huggingface_url: "https://huggingface.co/datasets/ai4bharat/vistaar"
+    openslr_id: null
+    version: "1.0"
+    license: "MIT"
+    commercial_use: true
+    derivative_model_allowed: true
+    redistribution_allowed: true
+    share_alike: false
+    attribution_required: false
+    legal_review_required: false
+    total_hours: null
+    labeled_hours: null
+    unlabeled_hours: 0
+    speakers: null
+    languages: ["hi", "bn", "gu", "kn", "ml", "mr", "or", "pa", "ta", "te"]
+    domain: "benchmark suite"
+    telephone_available: false
+    noisy_audio: false
+    spontaneous_speech: false
+    code_switching: false
+    sampling_rates: [16000]
+    transcript_available: true
+    role: "BENCHMARK"
+    status: "VERIFIED"
+    notes: >
+      Vistaar is an ASR benchmark suite across 12 Indian languages.
+      MUST NOT be mixed into training data.
+
+  - dataset_id: "lahaja"
+    name: "Lahaja"
+    provider: "AI4Bharat"
+    official_url: "https://ai4bharat.iitm.ac.in"
+    huggingface_url: "https://huggingface.co/datasets/ai4bharat/lahaja"
+    openslr_id: null
+    version: "1.0"
+    license: "MIT"
+    commercial_use: true
+    derivative_model_allowed: true
+    redistribution_allowed: true
+    share_alike: false
+    attribution_required: false
+    legal_review_required: false
+    total_hours: null
+    labeled_hours: null
+    unlabeled_hours: 0
+    speakers: null
+    languages: ["hi"]
+    domain: "dialect/accent benchmark"
+    telephone_available: true
+    noisy_audio: true
+    spontaneous_speech: true
+    code_switching: true
+    sampling_rates: [16000, 8000]
+    transcript_available: true
+    role: "BENCHMARK"
+    status: "VERIFIED"
+    notes: >
+      Lahaja is an accent/dialect benchmark for Hindi. Covers 11 regional Hindi accents.
+      MUST NOT be mixed into training data. Evaluation only.
+
+  - dataset_id: "vaani"
+    name: "Project Vaani"
+    provider: "IISc / ARTPARK"
+    official_url: "https://vaani.iisc.ac.in"
+    huggingface_url: "https://huggingface.co/datasets/ARTPARK-IISc/Vaani-transcription-part"
+    openslr_id: null
+    version: "1.0"
+    license: "CC-BY-4.0"
+    commercial_use: true
+    derivative_model_allowed: true
+    redistribution_allowed: true
+    share_alike: false
+    attribution_required: true
+    legal_review_required: false
+    total_hours: null
+    labeled_hours: null
+    unlabeled_hours: null
+    speakers: null
+    languages: ["hi"]
+    domain: "telephony/conversational"
+    telephone_available: true
+    noisy_audio: true
+    spontaneous_speech: true
+    code_switching: true
+    sampling_rates: [8000, 16000]
+    transcript_available: true
+    role: "TRAINING"
+    status: "PENDING_VERIFICATION"
+    notes: >
+      Large-scale Indian telephone speech corpus collected via IVR/mobile phone.
+      Contains real-world telephone quality (8kHz) audio.
+      Pending verification of full labeled hours and exact HF subset availability.
+
+  - dataset_id: "mucs-hindi-english"
+    name: "MUCS Hindi-English Code-Switching (OpenSLR 104)"
+    provider: "Microsoft / OpenSLR"
+    official_url: "https://www.openslr.org/104"
+    huggingface_url: null
+    openslr_id: 104
+    version: "1.0"
+    license: "CC-BY-SA-4.0"
+    commercial_use: false
+    derivative_model_allowed: false
+    redistribution_allowed: true
+    share_alike: true
+    attribution_required: true
+    legal_review_required: true
+    total_hours: null
+    labeled_hours: null
+    unlabeled_hours: 0
+    speakers: null
+    languages: ["hi", "en"]
+    domain: "code-switching"
+    telephone_available: false
+    noisy_audio: false
+    spontaneous_speech: true
+    code_switching: true
+    sampling_rates: [16000]
+    transcript_available: true
+    role: "TRAINING"
+    status: "PENDING_VERIFICATION"
+    notes: >
+      Hindi-English code-switching dataset from Microsoft Research.
+      LEGAL REVIEW REQUIRED for commercial use (CC-BY-SA-4.0 restricts commercial derivative models).
+
+  - dataset_id: "mozilla-cv-hindi"
+    name: "Mozilla Common Voice - Hindi"
+    provider: "Mozilla"
+    official_url: "https://commonvoice.mozilla.org/hi"
+    huggingface_url: "https://huggingface.co/datasets/mozilla-foundation/common_voice_17_0"
+    openslr_id: null
+    version: "17.0"
+    license: "CC0-1.0"
+    commercial_use: true
+    derivative_model_allowed: true
+    redistribution_allowed: true
+    share_alike: false
+    attribution_required: false
+    legal_review_required: false
+    total_hours: null
+    labeled_hours: null
+    unlabeled_hours: 0
+    speakers: null
+    languages: ["hi"]
+    domain: "read speech"
+    telephone_available: false
+    noisy_audio: false
+    spontaneous_speech: false
+    code_switching: false
+    sampling_rates: [48000]
+    transcript_available: true
+    role: "TRAINING"
+    status: "PENDING_VERIFICATION"
+    notes: >
+      Crowd-sourced Hindi speech. CC0 license. Requires resampling from 48kHz to 16kHz.
+      Size varies by CV version. Verify current Hindi hours before use.
+
+  - dataset_id: "svarah"
+    name: "Svarah"
+    provider: "AI4Bharat"
+    official_url: "https://ai4bharat.iitm.ac.in"
+    huggingface_url: "https://huggingface.co/datasets/ai4bharat/svarah"
+    openslr_id: null
+    version: "1.0"
+    license: "MIT"
+    commercial_use: true
+    derivative_model_allowed: true
+    redistribution_allowed: true
+    share_alike: false
+    attribution_required: false
+    legal_review_required: false
+    total_hours: null
+    labeled_hours: null
+    unlabeled_hours: 0
+    speakers: null
+    languages: ["hi", "en"]
+    domain: "benchmark"
+    telephone_available: false
+    noisy_audio: true
+    spontaneous_speech: true
+    code_switching: false
+    sampling_rates: [16000]
+    transcript_available: true
+    role: "BENCHMARK"
+    status: "PENDING_VERIFICATION"
+    notes: >
+      Indian English accent and native language accent benchmark.
+      Evaluation only. MUST NOT be used as training data.
+
+# Evaluation dataset IDs — these will be blocked from training manifests
+evaluation_only_dataset_ids:
+  - "lahaja"
+  - "vistaar"
+  - "svarah"

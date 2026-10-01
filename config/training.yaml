@@ -1,0 +1,42 @@
+# Training Configuration for Indian ASR Fine-Tuning
+# Optimized for Hindi, Hinglish code-switching, and 8kHz Telephone audio.
+
+model:
+  base_model_id: "indic-conformer"
+  hf_repo: "Anshul1212/indicconformer-hi-hybrid-rnnt-large-hf"
+  fallback_model_id: "whisper-small"
+  language: "hi"
+
+data_balancing:
+  weights:
+    hindi: 0.40
+    hinglish: 0.30
+    telephone_8k: 0.20
+    regional_accents: 0.10
+
+augmentation:
+  enabled: true
+  background_noise_prob: 0.30
+  volume_perturbation_prob: 0.40
+  telephony_filter_prob: 0.50  # Simulates 8kHz telephone bandwidth for non-telephone audio
+
+optimization:
+  learning_rate: 0.0001
+  weight_decay: 0.01
+  warmup_ratio: 0.10
+  optimizer: "adamw"
+  scheduler: "cosine"
+  gradient_accumulation_steps: 4
+
+hardware:
+  batch_size: 4
+  eval_batch_size: 4
+  num_workers: 0
+  mixed_precision: "fp16"  # "fp16", "bf16", or "no"
+  device: "auto"
+
+checkpointing:
+  save_steps: 100
+  eval_steps: 100
+  save_total_limit: 3
+  output_dir: "outputs/checkpoints"

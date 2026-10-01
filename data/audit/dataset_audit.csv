@@ -1,0 +1,7 @@
+file_path,dataset_id,format,duration_s,sample_rate,channels,is_telephone,is_corrupted,has_transcript,audio_hash,error
+/Users/ankitkumar/Desktop/local-indian-stt/data/test_samples/test_44k_stereo.wav,unknown,wav,2.0,44100,2,False,False,True,d90983ee24cf70b763806a0303156029,
+/Users/ankitkumar/Desktop/local-indian-stt/data/test_samples/test_8k_telephone.wav,unknown,wav,3.0,8000,1,True,False,True,f3e3a921d1751328115a75cf0f55f515,
+/Users/ankitkumar/Desktop/local-indian-stt/data/test_samples/test_16k_mono.mp3,unknown,mp3,2.5,16000,1,False,False,True,fef6a483379d46cd1420d8709a1ea124,
+/Users/ankitkumar/Desktop/local-indian-stt/data/test_samples/test_short_0.3s.wav,unknown,wav,0.3,16000,1,False,False,True,1ade9e7fc105cae1eea5a98ab07ce82e,
+/Users/ankitkumar/Desktop/local-indian-stt/data/test_samples/test_long_12s.wav,unknown,wav,12.0,16000,1,False,False,True,5371a8c2d06192b55abf38ff98af5b43,
+/Users/ankitkumar/Desktop/local-indian-stt/data/test_samples/test_16k_mono.wav,unknown,wav,2.5,16000,1,False,False,True,89a5bf2651bf88c292897544a205fa1f,

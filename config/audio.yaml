@@ -1,0 +1,37 @@
+# Audio Processing Configuration
+
+# Target format for all ASR model inputs
+target_sample_rate: 16000
+target_channels: 1       # Mono
+target_dtype: "float32"
+
+# Supported input formats (via soundfile + torchaudio + librosa fallback)
+supported_formats:
+  - ".wav"
+  - ".mp3"
+  - ".m4a"
+  - ".flac"
+  - ".ogg"
+  - ".opus"
+  - ".aac"
+
+# Telephone audio detection thresholds
+telephone:
+  max_sample_rate: 8000    # Anything <= 8000 Hz is treated as telephone/narrowband
+  narrowband_flag: true
+
+# Quality thresholds
+quality:
+  min_duration_seconds: 0.1
+  max_duration_seconds: 1800   # 30 minutes max per file
+  min_rms_threshold: 0.001     # Below this = near-silent
+  clipping_threshold: 0.99     # Sample abs value above this = clipping
+
+# Silence detection
+silence:
+  top_db: 60               # Silence threshold in dB relative to peak
+  min_silence_ms: 500      # Silence segments shorter than this are ignored
+
+# Resampling
+resampling:
+  method: "soxr_hq"        # soxr_hq | kaiser_best | kaiser_fast

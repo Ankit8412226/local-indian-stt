@@ -1,0 +1,174 @@
+# Model Registry Configuration
+# All verified HuggingFace repositories and model metadata.
+# Do NOT add a model here without verifying its HF repo is accessible.
+
+models:
+
+  - model_id: indic-conformer
+    name: "IndicConformer Hindi (HF Transformers Wrapper)"
+    provider: "AI4Bharat / Anshul1212 (Community HF Conversion)"
+    hf_repo: "Anshul1212/indicconformer-hi-hybrid-rnnt-large-hf"
+    official_model: false
+    source_model: "ai4bharat/indicconformer_stt_hi_hybrid_ctc_rnnt_large"
+    version: "main"
+    model_type: "conformer-hybrid-ctc-rnnt"
+    languages: ["hi", "bn", "gu", "kn", "ml", "mr", "or", "pa", "ta", "te", "ur", "as", "ne", "sa", "sd", "kok", "doi", "mai", "mni", "brx", "sat", "ks"]
+    default_language: "hi"
+    supported_sample_rate: 16000
+    decoding_modes: ["rnnt", "ctc"]
+    default_decoding_mode: "rnnt"
+    parameter_count: null  # Not publicly disclosed for community wrapper
+    license: "apache-2.0"
+    gated: false
+    auth_required: false
+    status: "VERIFIED"
+    notes: >
+      Community Transformers-compatible conversion of the official AI4Bharat NeMo model.
+      The official model (ai4bharat/indicconformer_stt_hi_hybrid_ctc_rnnt_large) is gated
+      and requires HF_TOKEN + user approval. This wrapper is publicly accessible.
+      Trust remote code is required (trust_remote_code=True).
+
+  - model_id: indic-conformer-official
+    name: "IndicConformer Hindi Large (Official NeMo)"
+    provider: "AI4Bharat"
+    hf_repo: "ai4bharat/indicconformer_stt_hi_hybrid_ctc_rnnt_large"
+    official_model: true
+    source_model: null
+    version: "main"
+    model_type: "conformer-hybrid-ctc-rnnt"
+    languages: ["hi"]
+    default_language: "hi"
+    supported_sample_rate: 16000
+    decoding_modes: ["rnnt", "ctc"]
+    default_decoding_mode: "rnnt"
+    license: "mit"
+    gated: true
+    auth_required: true
+    status: "GATED"
+    notes: >
+      Official AI4Bharat model. Requires NeMo library, HF_TOKEN, and gated access approval.
+      Gated status verified September 2026. See: https://huggingface.co/ai4bharat/indicconformer_stt_hi_hybrid_ctc_rnnt_large
+
+  - model_id: sravaani
+    name: "SraVaani 1.0"
+    provider: "ARTPARK / IISc"
+    hf_repo: "ARTPARK-IISc/SraVaani-1.0"
+    official_model: true
+    source_model: null
+    version: "1.0"
+    model_type: "conformer-tdt"
+    languages: ["hi", "kn", "ml", "te", "en", "gu", "pa", "or", "bn", "ta", "as", "sa", "ne", "mr"]
+    default_language: "hi"
+    supported_sample_rate: 16000
+    decoding_modes: ["tdt", "ctc"]
+    default_decoding_mode: "tdt"
+    license: "mit"
+    gated: false
+    auth_required: false
+    status: "VERIFIED"
+    notes: >
+      Official SraVaani 1.0 from ARTPARK-IISc. Uses custom NeMo/Transformers code.
+      Open access. Arxiv: 2608.08235.
+
+  - model_id: whisper-medium
+    name: "Whisper Medium"
+    provider: "OpenAI"
+    hf_repo: "openai/whisper-medium"
+    official_model: true
+    source_model: null
+    version: "main"
+    model_type: "whisper-encoder-decoder"
+    languages: ["hi", "en"]  # and 98 other languages
+    default_language: "hi"
+    supported_sample_rate: 16000
+    decoding_modes: ["greedy", "beam_search"]
+    default_decoding_mode: "beam_search"
+    parameter_count: 307_000_000
+    license: "apache-2.0"
+    gated: false
+    auth_required: false
+    status: "VERIFIED"
+    notes: "Strong multilingual baseline. Good Hindi and Indian English support."
+
+  - model_id: whisper-small
+    name: "Whisper Small"
+    provider: "OpenAI"
+    hf_repo: "openai/whisper-small"
+    official_model: true
+    source_model: null
+    version: "main"
+    model_type: "whisper-encoder-decoder"
+    languages: ["hi", "en"]
+    default_language: "hi"
+    supported_sample_rate: 16000
+    decoding_modes: ["greedy", "beam_search"]
+    default_decoding_mode: "beam_search"
+    parameter_count: 244_000_000
+    license: "apache-2.0"
+    gated: false
+    auth_required: false
+    status: "VERIFIED"
+    notes: "Fast and practical for CPU. Lower accuracy than whisper-medium."
+
+  - model_id: whisper-large-v3-turbo
+    name: "Whisper Large v3 Turbo"
+    provider: "OpenAI"
+    hf_repo: "openai/whisper-large-v3-turbo"
+    official_model: true
+    source_model: null
+    version: "main"
+    model_type: "whisper-encoder-decoder"
+    languages: ["hi", "en"]
+    default_language: "hi"
+    supported_sample_rate: 16000
+    decoding_modes: ["greedy", "beam_search"]
+    default_decoding_mode: "beam_search"
+    parameter_count: 809_000_000
+    license: "apache-2.0"
+    gated: false
+    auth_required: false
+    status: "VERIFIED"
+    notes: "Best Whisper model for quality. Requires more memory."
+
+  - model_id: indic-whisper-hindi
+    name: "IndicWhisper Hindi (Multi-GPU fine-tune)"
+    provider: "parthiv11 (Community)"
+    hf_repo: "parthiv11/indic_whisper_hi_multi_gpu"
+    official_model: false
+    source_model: "openai/whisper-small"
+    version: "main"
+    model_type: "whisper-encoder-decoder"
+    languages: ["hi"]
+    default_language: "hi"
+    supported_sample_rate: 16000
+    decoding_modes: ["greedy", "beam_search"]
+    default_decoding_mode: "beam_search"
+    parameter_count: null
+    license: "mit"
+    gated: false
+    auth_required: false
+    status: "VERIFIED"
+    notes: "Whisper fine-tuned on Hindi data. Community model, not official AI4Bharat release."
+
+  - model_id: indic-whisper-medium-hindi
+    name: "Whisper Medium Hindi (Shrutilipi + MUCS)"
+    provider: "makaveli10 (Community)"
+    hf_repo: "makaveli10/whisper-medium-Hindi-shrutilipi_indic_mcv"
+    official_model: false
+    source_model: "openai/whisper-medium"
+    version: "main"
+    model_type: "whisper-encoder-decoder"
+    languages: ["hi"]
+    default_language: "hi"
+    supported_sample_rate: 16000
+    decoding_modes: ["greedy", "beam_search"]
+    default_decoding_mode: "beam_search"
+    parameter_count: null
+    license: "apache-2.0"
+    gated: false
+    auth_required: false
+    status: "VERIFIED"
+    notes: "Fine-tuned on Shrutilipi + Indic MCV datasets. Good Hindi performance."
+
+# Default model when --model flag is not specified
+default_model: "whisper-medium"

@@ -1,0 +1,46 @@
+# Benchmarking Configuration
+
+# Metrics to compute
+metrics:
+  - wer        # Word Error Rate
+  - cer        # Character Error Rate
+  - rtf        # Real-Time Factor
+
+# Report output directory
+reports_dir: "./reports"
+
+# Report formats
+report_formats:
+  - json
+  - csv
+  - markdown
+
+# External result import format for Gemini / API comparisons
+external_import_file: "benchmark_external_results.jsonl"
+
+# Categories for breakdown analysis
+categories:
+  - hindi
+  - hinglish
+  - indian_english
+  - names
+  - places
+  - numbers
+  - telephone
+  - noisy
+  - accent
+  - spontaneous
+
+# Benchmark models to run by default (model_id from models.yaml)
+default_benchmark_models:
+  - whisper-medium
+  - indic-conformer
+
+# Default benchmark dataset
+default_benchmark_dataset: "lahaja"
+
+# Batch size for benchmark inference
+batch_size: 1
+
+# Timeout per audio file in seconds
+per_file_timeout: 120
